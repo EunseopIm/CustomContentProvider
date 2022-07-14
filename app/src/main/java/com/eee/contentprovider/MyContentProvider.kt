@@ -15,8 +15,8 @@ class MyContentProvider: ContentProvider() {
      companion object {
 
         // FOR DATA
-        val AUTHORITY = "com.eee.contentprovider.provider.MyContentProvider"
-        val TABLE_NAME = Item::class.java.simpleName
+        val AUTHORITY = "com.eee.contentprovider.MyContentProvider"
+        val TABLE_NAME = "item"
         val URI_ITEM = Uri.parse("content://$AUTHORITY/$TABLE_NAME")
     }
 
