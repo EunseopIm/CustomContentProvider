@@ -19,19 +19,7 @@ class UserListActivity : AppCompatActivity() {
 
         val db = ItemDatabase.getInstance(this)
 
-        binding.btnTest.setOnClickListener {
-
-            Thread {
-
-                val contentResolverHelper = ContentResolverHelper(this)
-
-                //contentResolverHelper.deleteCompanyTMRecord(3)
-                contentResolverHelper.insertCompanyTMRecord("제목2", "내용2")
-                contentResolverHelper.allItems()
-
-            }.start()
-        }
-
+        // 데이터 불러오기
         binding.btnLoad.setOnClickListener {
 
             Thread {
@@ -61,6 +49,20 @@ class UserListActivity : AppCompatActivity() {
 
                     binding.tvData.text = stringBuilder.toString()
                 }
+
+            }.start()
+        }
+
+        // 테스트
+        binding.btnTest.setOnClickListener {
+
+            Thread {
+
+                val contentResolverHelper = ContentResolverHelper(this)
+
+                //contentResolverHelper.deleteCompanyTMRecord(3)
+                contentResolverHelper.insertCompanyTMRecord("제목2", "내용2")
+                contentResolverHelper.allItems()
 
             }.start()
         }

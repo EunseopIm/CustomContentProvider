@@ -39,7 +39,12 @@ class MyContentProvider: ContentProvider() {
         Log.v(">>>", "@# QUUUUU!238)(@!$%&(!@*&#$(*@!^$*&(@!&*(#")
         context?.let {
             
-            val itemId = ContentUris.parseId(uri)
+            var itemId = 0L
+            try {
+                itemId = ContentUris.parseId(uri)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
             val cursor = db.itemDao().getAllItem()
             //val cursor = db.itemDao().getItem(itemId)
             cursor.setNotificationUri(it.contentResolver, uri)
