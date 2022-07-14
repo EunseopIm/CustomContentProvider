@@ -31,8 +31,11 @@ class UserListActivity : AppCompatActivity() {
             Thread {
 
                 val contentResolverHelper = ContentResolverHelper(this)
-                contentResolverHelper.insertCompanyTMRecord("제목1", "내용1")
+
+                //contentResolverHelper.deleteCompanyTMRecord(3)
+                //contentResolverHelper.insertCompanyTMRecord("제목1", "내용1")
                 contentResolverHelper.allItems()
+
             }.start()
         }
 

@@ -12,7 +12,7 @@ class ContentResolverHelper(private var mContext: Context) {
 
         const val TABLE_NAME = "item"
         const val PROVIDER_NAME = "com.app.first.MyContentProvider"
-        const val URL = "content://$PROVIDER_NAME"
+        const val URL = "content://$PROVIDER_NAME/$TABLE_NAME"
         val CONTENT_URI = Uri.parse(URL)
     }
 
@@ -73,6 +73,9 @@ class ContentResolverHelper(private var mContext: Context) {
         val where: String = KEY_ID + "=?"
         val selectionArgs = arrayOf(index.toString())
         contentResolver.delete(CONTENT_URI, where, selectionArgs)*/
+
+        val url = "$URL/$id"
+        contentResolver.delete(Uri.parse(url), null, null)
     }
 
     fun updateCompanyTMRecord(id: Long) {
