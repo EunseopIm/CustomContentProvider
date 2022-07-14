@@ -5,6 +5,7 @@ import android.content.ContentUris
 import android.content.ContentValues
 import android.database.Cursor
 import android.net.Uri
+import android.util.Log
 import com.app.first.database.ItemDatabase
 import com.app.first.database.model.Item
 
@@ -15,7 +16,7 @@ class MyContentProvider: ContentProvider() {
      companion object {
 
         // FOR DATA
-        val AUTHORITY = "com.eee.contentprovider.MyContentProvider"
+        val AUTHORITY = "com.app.first.MyContentProvider"
         val TABLE_NAME = "item"
         val URI_ITEM = Uri.parse("content://$AUTHORITY/$TABLE_NAME")
     }
@@ -35,6 +36,7 @@ class MyContentProvider: ContentProvider() {
         sortOrder: String?,
     ): Cursor? {
 
+        Log.v(">>>", "@# QUUUUU!238)(@!$%&(!@*&#$(*@!^$*&(@!&*(#")
         context?.let {
             
             val itemId = ContentUris.parseId(uri)
