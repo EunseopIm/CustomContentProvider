@@ -1,12 +1,12 @@
-package com.eee.contentprovider
+package com.app.first
 
 import android.content.ContentProvider
 import android.content.ContentUris
 import android.content.ContentValues
 import android.database.Cursor
 import android.net.Uri
-import com.eee.contentprovider.database.ItemDatabase
-import com.eee.contentprovider.database.model.Item
+import com.app.first.database.ItemDatabase
+import com.app.first.database.model.Item
 
 class MyContentProvider: ContentProvider() {
 

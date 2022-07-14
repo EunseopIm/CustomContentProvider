@@ -1,12 +1,11 @@
-package com.eee.contentprovider
+package com.app.first
 
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.eee.contentprovider.database.ItemDatabase
-import com.eee.contentprovider.database.model.Item
-import com.eee.contentprovider.databinding.ActivityUserListBinding
+import com.app.first.database.ItemDatabase
+import com.app.first.database.model.Item
+import com.app.first.databinding.ActivityUserListBinding
 
 class UserListActivity : AppCompatActivity() {
 

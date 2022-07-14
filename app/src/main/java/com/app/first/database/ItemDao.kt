@@ -1,8 +1,8 @@
-package com.eee.contentprovider.database
+package com.app.first.database
 
 import android.database.Cursor
 import androidx.room.*
-import com.eee.contentprovider.database.model.Item
+import com.app.first.database.model.Item
 
 @Dao
 interface ItemDao {

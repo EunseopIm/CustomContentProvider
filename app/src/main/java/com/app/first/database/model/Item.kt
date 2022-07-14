@@ -1,4 +1,4 @@
-package com.eee.contentprovider.database.model
+package com.app.first.database.model
 
 
 import android.content.ContentValues

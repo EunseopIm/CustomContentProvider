@@ -1,4 +1,4 @@
-package com.eee.contentprovider
+package com.app.first
 
 import org.junit.Test
 

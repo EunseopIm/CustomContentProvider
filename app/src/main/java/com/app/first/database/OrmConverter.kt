@@ -1,4 +1,4 @@
-package com.eee.contentprovider.database
+package com.app.first.database
 
 import androidx.room.TypeConverter
 import kotlinx.serialization.decodeFromString

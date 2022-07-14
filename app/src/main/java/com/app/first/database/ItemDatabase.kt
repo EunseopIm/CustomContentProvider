@@ -1,11 +1,11 @@
-package com.eee.contentprovider.database
+package com.app.first.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.eee.contentprovider.database.model.Item
+import com.app.first.database.model.Item
 
 @Database(
     entities = [Item::class],
