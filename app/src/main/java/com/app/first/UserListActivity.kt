@@ -19,13 +19,6 @@ class UserListActivity : AppCompatActivity() {
 
         val db = ItemDatabase.getInstance(this)
 
-        Thread {
-
-            db.itemDao().insertBook(Item(1, "title1", "content1"))
-            db.itemDao().insertBook(Item(2, "title2", "content2"))
-
-        }.start()
-
         binding.btnTest.setOnClickListener {
 
             Thread {
@@ -33,7 +26,7 @@ class UserListActivity : AppCompatActivity() {
                 val contentResolverHelper = ContentResolverHelper(this)
 
                 //contentResolverHelper.deleteCompanyTMRecord(3)
-                //contentResolverHelper.insertCompanyTMRecord("제목1", "내용1")
+                contentResolverHelper.insertCompanyTMRecord("제목2", "내용2")
                 contentResolverHelper.allItems()
 
             }.start()
