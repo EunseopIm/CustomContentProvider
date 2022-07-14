@@ -29,12 +29,11 @@
         </activity>
 
         <provider
-            android:name="com.app.first.MyContentProvider"
+            android:name=".MyContentProvider"
             android:authorities="com.app.first.MyContentProvider"
-            android:readPermission="com.eee.contentprovider.READ_DATABASE"
-            android:writePermission="com.eee.contentprovider.WRITE_DATABASE"
-            android:exported="true"
-            android:grantUriPermissions="true" />
+            android:readPermission="com.app.first.READ_DATABASE"
+            android:writePermission="com.app.first.WRITE_DATABASE"
+            android:exported="true" />
 
     </application>
 

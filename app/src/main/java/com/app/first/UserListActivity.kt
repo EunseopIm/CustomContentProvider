@@ -24,13 +24,39 @@ class UserListActivity : AppCompatActivity() {
             db.itemDao().insertBook(Item(1, "title1", "content1"))
             db.itemDao().insertBook(Item(2, "title2", "content2"))
 
-            val cursor = db.itemDao().getAllItem()
-            Log.v(">>>", "a.size : " + cursor.count)
-
         }.start()
 
-        Thread {
+        binding.btnLoad.setOnClickListener {
 
-        }.start()
+            Thread {
+
+                val cursor = db.itemDao().getAllItem()
+                Log.v(">>>", "a.size : " + cursor.count)
+
+                runOnUiThread {
+
+                    val stringBuilder = StringBuilder()
+                    while (cursor.moveToNext()) {
+
+                        val itemIdIndex = cursor.getColumnIndex("itemId")
+                        val titleIndex = cursor.getColumnIndex("title")
+                        val contentIndex = cursor.getColumnIndex("content")
+
+                        val id = cursor.getLong(itemIdIndex)
+                        val title = cursor.getString(titleIndex)
+                        val content = cursor.getString(contentIndex)
+
+                        val data = "id[$id] title[$title] content[$content]"
+                        if (stringBuilder.isNotEmpty()) stringBuilder.append("\n")
+                        stringBuilder.append(data)
+                        Log.v(">>>", "@# $data")
+
+                    }
+
+                    binding.tvData.text = stringBuilder.toString()
+                }
+
+            }.start()
+        }
     }
 }
