@@ -28,7 +28,7 @@ data class Item(
             values?.let {
 
                 if (values.containsKey("title")) item.title = values.getAsString("title")
-                if (values.containsKey("content")) item.title = values.getAsString("content")
+                if (values.containsKey("content")) item.content = values.getAsString("content")
             }
 
             return item

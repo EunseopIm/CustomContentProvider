@@ -26,6 +26,16 @@ class UserListActivity : AppCompatActivity() {
 
         }.start()
 
+        binding.btnTest.setOnClickListener {
+
+            Thread {
+
+                val contentResolverHelper = ContentResolverHelper(this)
+                contentResolverHelper.insertCompanyTMRecord("제목1", "내용1")
+                contentResolverHelper.allItems()
+            }.start()
+        }
+
         binding.btnLoad.setOnClickListener {
 
             Thread {
