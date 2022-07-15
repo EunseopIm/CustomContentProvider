@@ -1,4 +1,4 @@
-package com.app.first
+package com.app.first.provider
 
 import android.content.ContentProvider
 import android.content.ContentUris
@@ -7,7 +7,7 @@ import android.database.Cursor
 import android.net.Uri
 import android.util.Log
 import com.app.first.database.ItemDatabase
-import com.app.first.database.model.Item
+import com.app.first.database.Item
 
 class MyContentProvider: ContentProvider() {
 
@@ -16,7 +16,7 @@ class MyContentProvider: ContentProvider() {
      companion object {
 
         // FOR DATA
-        val AUTHORITY = "com.app.first.MyContentProvider"
+        val AUTHORITY = "com.app.first.provider.MyContentProvider"
         val TABLE_NAME = "item"
         val URI_ITEM = Uri.parse("content://$AUTHORITY/$TABLE_NAME")
     }

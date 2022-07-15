@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "ContentProvider"
+rootProject.name = "ContentProviderSample"
 include ':app'

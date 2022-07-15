@@ -4,15 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import com.app.first.database.model.Item
 
 @Database(
     entities = [Item::class],
-    version = 2,
+    version = 1,
     exportSchema = false
 )
-@TypeConverters(OrmConverter::class)
 abstract class ItemDatabase: RoomDatabase() {
 
     abstract fun itemDao(): ItemDao

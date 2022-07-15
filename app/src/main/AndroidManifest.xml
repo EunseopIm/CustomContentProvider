@@ -19,7 +19,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name="com.app.first.UserListActivity"
+            android:name="com.app.first.ItmListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,8 +29,8 @@
         </activity>
 
         <provider
-            android:name=".MyContentProvider"
-            android:authorities="com.app.first.MyContentProvider"
+            android:name=".provider.MyContentProvider"
+            android:authorities="com.app.first.provider.MyContentProvider"
             android:readPermission="com.app.first.READ_DATABASE"
             android:writePermission="com.app.first.WRITE_DATABASE"
             android:exported="true" />

@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.app.first.database.ItemDatabase
-import com.app.first.database.model.Item
-import com.app.first.databinding.ActivityUserListBinding
+import com.app.first.databinding.ActivityItemListBinding
 
-class UserListActivity : AppCompatActivity() {
+class ItmListActivity : AppCompatActivity() {
 
-    private val binding: ActivityUserListBinding by lazy {
-        ActivityUserListBinding.inflate(layoutInflater)
+    private val binding: ActivityItemListBinding by lazy {
+        ActivityItemListBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
