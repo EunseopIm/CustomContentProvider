@@ -32,8 +32,8 @@
         <provider
             android:name="com.study.providera.provider.MyContentProvider"
             android:authorities="com.study.providera.MyContentProvider"
-            android:readPermission="com.app.first.READ_DATABASE"
-            android:writePermission="com.app.first.WRITE_DATABASE"
+            android:readPermission="com.study.providera.READ_DATABASE"
+            android:writePermission="com.study.providera.WRITE_DATABASE"
             android:exported="true" />
 
     </application>
