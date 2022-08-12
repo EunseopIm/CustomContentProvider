@@ -1,4 +1,4 @@
-package com.app.first
+package com.study.providera
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.app.first
+package com.study.providera
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
