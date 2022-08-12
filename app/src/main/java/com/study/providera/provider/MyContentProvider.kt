@@ -5,9 +5,10 @@ import android.content.ContentUris
 import android.content.ContentValues
 import android.database.Cursor
 import android.net.Uri
+import android.os.Bundle
 import android.util.Log
-import com.study.providera.database.ItemDatabase
 import com.study.providera.database.Item
+import com.study.providera.database.ItemDatabase
 
 class MyContentProvider: ContentProvider() {
 
@@ -36,7 +37,8 @@ class MyContentProvider: ContentProvider() {
         sortOrder: String?,
     ): Cursor? {
 
-        Log.v(">>>", "@# QUUUUU!238)(@!$%&(!@*&#$(*@!^$*&(@!&*(#")
+        Log.v(">>>", "query() - $uri")
+
         context?.let {
             
             var itemId = 0L
@@ -96,4 +98,19 @@ class MyContentProvider: ContentProvider() {
 
         throw IllegalArgumentException("Failed to update row into $uri")
     }
+
+    override fun call(method: String, arg: String?, extras: Bundle?): Bundle? {
+
+        val bundle = Bundle()
+
+        if (method == "getId") {
+
+            bundle.putString("id", "robot123")
+
+            return bundle
+        }
+
+        return null
+    }
+
 }

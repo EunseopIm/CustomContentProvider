@@ -1,4 +1,4 @@
-package com.study.providera
+package com.study.providera.provider
 
 import android.content.ContentResolver
 import android.content.ContentValues
