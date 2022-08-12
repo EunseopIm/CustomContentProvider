@@ -7,20 +7,13 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import com.study.providera.MyContract
 import com.study.providera.database.Item
 import com.study.providera.database.ItemDatabase
 
 class MyContentProvider: ContentProvider() {
 
     lateinit var db: ItemDatabase
-
-     companion object {
-
-        // FOR DATA
-        val AUTHORITY = "com.study.providera.MyContentProvider"
-        val TABLE_NAME = "item"
-        val URI_ITEM = Uri.parse("content://$AUTHORITY/$TABLE_NAME")
-    }
 
     override fun onCreate(): Boolean {
 
@@ -57,7 +50,6 @@ class MyContentProvider: ContentProvider() {
                         e.printStackTrace()
                     }
                 }
-
             }
             // all items
             else {
@@ -72,7 +64,7 @@ class MyContentProvider: ContentProvider() {
     }
 
     override fun getType(p0: Uri): String? {
-        return "$AUTHORITY.$TABLE_NAME"
+        return "${MyContract.AUTHORITY}.${MyContract.TABLE_NAME}"
     }
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? {

@@ -5,17 +5,10 @@ import android.content.ContentValues
 import android.content.Context
 import android.net.Uri
 import android.util.Log
+import com.study.providera.MyContract
 import com.study.providera.database.Item
 
 class ContentResolverHelper(private var mContext: Context) {
-
-    companion object {
-
-        private const val TABLE_NAME = "item"
-        private const val AUTHORITY = "com.study.providera.MyContentProvider"
-        private const val URL = "content://$AUTHORITY/$TABLE_NAME"
-        val CONTENT_URI: Uri = Uri.parse(URL)
-    }
 
     private var contentResolver: ContentResolver = mContext.contentResolver
 
@@ -26,7 +19,7 @@ class ContentResolverHelper(private var mContext: Context) {
 
         val list = ArrayList<Item>()
 
-        val cursor = contentResolver.query(CONTENT_URI, null, null, null, null)
+        val cursor = contentResolver.query(MyContract.CONTENT_URI, null, null, null, null)
 
         if (cursor != null && cursor.count > 0) {
 
@@ -55,7 +48,7 @@ class ContentResolverHelper(private var mContext: Context) {
      */
     fun getItem(id: Long): Item? {
 
-        val cursor = contentResolver.query(CONTENT_URI, null, "id", arrayOf("$id"), null)
+        val cursor = contentResolver.query(MyContract.CONTENT_URI, null, "id", arrayOf("$id"), null)
 
         if (cursor != null && cursor.count > 0) {
 
@@ -82,7 +75,7 @@ class ContentResolverHelper(private var mContext: Context) {
     fun insertItem(title: String, content: String) {
 
         val contentValues = generateItem(title, content)
-        contentResolver.insert(CONTENT_URI, contentValues)
+        contentResolver.insert(MyContract.CONTENT_URI, contentValues)
     }
 
     /**
@@ -90,7 +83,7 @@ class ContentResolverHelper(private var mContext: Context) {
      */
     fun removeItem(id: Long) {
 
-        val url = "$URL/$id"
+        val url = "$MyContract.URL/$id"
 
         contentResolver.delete(Uri.parse(url), "id", arrayOf("$id"))
     }
