@@ -73,7 +73,7 @@ class ItmListActivity : AppCompatActivity() {
                 val contentResolverHelper = ContentResolverHelper(this)
                 val sdf = SimpleDateFormat("HH:mm:ss")
 
-                contentResolverHelper.insertItem("제목", "Content - ${sdf.format(Date())}")
+                contentResolverHelper.insertItem("내부", "Content - ${sdf.format(Date())}")
 
                 runOnUiThread { Toast.makeText(this, "Add!", Toast.LENGTH_SHORT).show() }
 
