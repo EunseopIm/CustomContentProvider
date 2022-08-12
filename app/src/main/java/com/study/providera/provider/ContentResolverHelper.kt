@@ -8,6 +8,9 @@ import android.util.Log
 import com.study.providera.MyContract
 import com.study.providera.database.Item
 
+/**
+ * 내부 테스트용
+ */
 class ContentResolverHelper(private var mContext: Context) {
 
     private var contentResolver: ContentResolver = mContext.contentResolver
