@@ -50,7 +50,7 @@ class ItmListActivity : AppCompatActivity() {
                         val title = cursor.getString(titleIndex)
                         val content = cursor.getString(contentIndex)
 
-                        val data = "id[$id] title[$title] content[$content]"
+                        val data = "id[$id] : $title - $content"
                         if (stringBuilder.isNotEmpty()) stringBuilder.append("\n")
                         stringBuilder.append(data)
 
