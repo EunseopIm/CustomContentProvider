@@ -1,4 +1,4 @@
-package com.app.first.provider
+package com.study.providera.provider
 
 import android.content.ContentProvider
 import android.content.ContentUris
@@ -6,8 +6,8 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.net.Uri
 import android.util.Log
-import com.app.first.database.ItemDatabase
-import com.app.first.database.Item
+import com.study.providera.database.ItemDatabase
+import com.study.providera.database.Item
 
 class MyContentProvider: ContentProvider() {
 

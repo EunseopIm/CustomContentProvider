@@ -1,10 +1,10 @@
-package com.app.first
+package com.study.providera
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.app.first.database.ItemDatabase
-import com.app.first.databinding.ActivityItemListBinding
+import com.study.providera.database.ItemDatabase
+import com.study.providera.databinding.ActivityItemListBinding
 
 class ItmListActivity : AppCompatActivity() {
 

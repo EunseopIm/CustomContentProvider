@@ -1,4 +1,4 @@
-package com.app.first.database
+package com.study.providera.database
 
 
 import android.content.ContentValues
