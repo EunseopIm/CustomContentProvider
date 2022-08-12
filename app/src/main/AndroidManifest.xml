@@ -30,7 +30,7 @@
 
         <provider
             android:name=".provider.MyContentProvider"
-            android:authorities="com.app.first.provider.MyContentProvider"
+            android:authorities="com.app.first.MyContentProvider"
             android:readPermission="com.app.first.READ_DATABASE"
             android:writePermission="com.app.first.WRITE_DATABASE"
             android:exported="true" />
