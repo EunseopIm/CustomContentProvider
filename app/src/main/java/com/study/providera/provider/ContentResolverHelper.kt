@@ -61,7 +61,7 @@ class ContentResolverHelper(private var mContext: Context) {
         return companyTMRecord*/
     }
 
-    fun insertCompanyTMRecord(title: String, content: String) {
+    fun insertItem(title: String, content: String) {
 
         val contentValues = generateItem(title, content)
         val uri = contentResolver.insert(CONTENT_URI, contentValues)

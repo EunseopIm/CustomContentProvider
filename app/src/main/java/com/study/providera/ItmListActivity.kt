@@ -53,16 +53,25 @@ class ItmListActivity : AppCompatActivity() {
             }.start()
         }
 
-        // 테스트
-        binding.btnTest.setOnClickListener {
+        // 데이터 추가
+        binding.btnAdd.setOnClickListener {
 
             Thread {
 
                 val contentResolverHelper = ContentResolverHelper(this)
 
-                //contentResolverHelper.deleteCompanyTMRecord(3)
-                contentResolverHelper.insertCompanyTMRecord("제목2", "내용2")
+                contentResolverHelper.insertItem("제목2", "내용2")
                 contentResolverHelper.allItems()
+
+            }.start()
+        }
+
+        // 데이터 삭제
+        binding.btnRemove.setOnClickListener {
+
+            Thread {
+
+                val contentResolverHelper = ContentResolverHelper(this)
 
             }.start()
         }

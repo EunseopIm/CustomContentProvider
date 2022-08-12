@@ -7,7 +7,7 @@ import androidx.room.*
 interface ItemDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertBook(item: Item): Long
+    fun insertItem(item: Item): Long
 
     @Update
     fun updateItem(item: Item): Int

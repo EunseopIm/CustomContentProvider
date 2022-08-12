@@ -65,7 +65,7 @@ class MyContentProvider: ContentProvider() {
 
         context?.let {
 
-            val id = db.itemDao().insertBook(Item.fromContentValues(values))
+            val id = db.itemDao().insertItem(Item.fromContentValues(values))
             if (id != -1L) {
 
                 it.contentResolver.notifyChange(uri, null)
