@@ -83,9 +83,9 @@ class ContentResolverHelper(private var mContext: Context) {
      */
     fun removeItem(id: Long) {
 
-        val url = "$MyContract.URL/$id"
+        val uriString = "$MyContract.URL/$id"
 
-        contentResolver.delete(Uri.parse(url), "id", arrayOf("$id"))
+        contentResolver.delete(Uri.parse(uriString), "id", arrayOf("$id"))
     }
 
     /**
