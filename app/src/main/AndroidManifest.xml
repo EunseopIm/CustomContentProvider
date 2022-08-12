@@ -28,6 +28,7 @@
             </intent-filter>
         </activity>
 
+        <!-- ContentProvider 정의 -->
         <provider
             android:name="com.study.providera.provider.MyContentProvider"
             android:authorities="com.study.providera.MyContentProvider"
