@@ -29,6 +29,7 @@ class ContentResolverHelper(private var mContext: Context) {
         val cursor = contentResolver.query(CONTENT_URI, null, null, null, null)
 
         if (cursor != null && cursor.count > 0) {
+
             while (cursor.moveToNext()) {
 
                 val itemIdIndex = cursor.getColumnIndex("itemId")

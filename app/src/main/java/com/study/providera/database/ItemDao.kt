@@ -15,6 +15,9 @@ interface ItemDao {
     @Query("DELETE FROM item WHERE itemId = :id")
     fun deleteItem(id: Long): Int
 
+    @Query("DELETE FROM item")
+    fun deleteAll(): Int
+
     @Query("SELECT * FROM item WHERE itemId = :id")
     fun getItem(id: Long): Cursor
 

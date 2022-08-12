@@ -93,6 +93,7 @@ class MyContentProvider: ContentProvider() {
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?): Int {
 
         context?.let {
+
             val count = db.itemDao().deleteItem(ContentUris.parseId(uri))
             it.contentResolver.notifyChange(uri, null)
             return count

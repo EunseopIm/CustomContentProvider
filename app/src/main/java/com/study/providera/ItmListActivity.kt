@@ -27,9 +27,15 @@ class ItmListActivity : AppCompatActivity() {
 
             Thread {
 
+                // 단건 데이터 조회
+                /*val contentResolverHelper = ContentResolverHelper(this)
+                val item = contentResolverHelper.getItem(1)
+                Log.v(">>>", item.toString())*/
+
                 val cursor = db.itemDao().getAllItem()
                 Log.v(">>>", "cursor count : " + cursor.count)
 
+                // 모든 데이터 조회
                 runOnUiThread {
 
                     val stringBuilder = StringBuilder()
@@ -52,6 +58,8 @@ class ItmListActivity : AppCompatActivity() {
                     }
 
                     binding.tvData.text = stringBuilder.toString()
+
+                    runOnUiThread { Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show() }
                 }
 
             }.start()
@@ -77,7 +85,9 @@ class ItmListActivity : AppCompatActivity() {
 
             Thread {
 
-                val contentResolverHelper = ContentResolverHelper(this)
+                db.itemDao().deleteAll()
+
+                runOnUiThread { Toast.makeText(this, "Removed", Toast.LENGTH_SHORT).show() }
 
             }.start()
         }
