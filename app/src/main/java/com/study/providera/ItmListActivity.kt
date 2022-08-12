@@ -2,10 +2,13 @@ package com.study.providera
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.study.providera.database.ItemDatabase
 import com.study.providera.databinding.ActivityItemListBinding
 import com.study.providera.provider.ContentResolverHelper
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ItmListActivity : AppCompatActivity() {
 
@@ -25,11 +28,12 @@ class ItmListActivity : AppCompatActivity() {
             Thread {
 
                 val cursor = db.itemDao().getAllItem()
-                Log.v(">>>", "a.size : " + cursor.count)
+                Log.v(">>>", "cursor count : " + cursor.count)
 
                 runOnUiThread {
 
                     val stringBuilder = StringBuilder()
+
                     while (cursor.moveToNext()) {
 
                         val itemIdIndex = cursor.getColumnIndex("itemId")
@@ -43,8 +47,8 @@ class ItmListActivity : AppCompatActivity() {
                         val data = "id[$id] title[$title] content[$content]"
                         if (stringBuilder.isNotEmpty()) stringBuilder.append("\n")
                         stringBuilder.append(data)
-                        Log.v(">>>", "@# $data")
 
+                        Log.v(">>>", "data : $data")
                     }
 
                     binding.tvData.text = stringBuilder.toString()
@@ -59,9 +63,11 @@ class ItmListActivity : AppCompatActivity() {
             Thread {
 
                 val contentResolverHelper = ContentResolverHelper(this)
+                val sdf = SimpleDateFormat("HH:mm:ss")
 
-                contentResolverHelper.insertItem("제목2", "내용2")
-                contentResolverHelper.allItems()
+                contentResolverHelper.insertItem("제목", "Content - ${sdf.format(Date())}")
+
+                runOnUiThread { Toast.makeText(this, "Add!", Toast.LENGTH_SHORT).show() }
 
             }.start()
         }

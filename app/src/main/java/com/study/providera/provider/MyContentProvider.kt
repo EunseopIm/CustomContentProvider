@@ -40,25 +40,39 @@ class MyContentProvider: ContentProvider() {
         Log.v(">>>", "query() - $uri")
 
         context?.let {
-            
-            var itemId = 0L
-            try {
-                itemId = ContentUris.parseId(uri)
-            } catch (e: Exception) {
-                e.printStackTrace()
+
+            if (selection != null && selection == "id") {
+
+                // single item
+                if (selectionArgs != null && selectionArgs.isNotEmpty()) {
+
+                    try {
+
+                        val itemId = selectionArgs[0].toLong()
+                        val cursor = db.itemDao().getItem(itemId)
+                        cursor.setNotificationUri(it.contentResolver, uri)
+                        return cursor
+
+                    } catch (e: NumberFormatException) {
+                        e.printStackTrace()
+                    }
+                }
+
             }
-            val cursor = db.itemDao().getAllItem()
-            //val cursor = db.itemDao().getItem(itemId)
-            cursor.setNotificationUri(it.contentResolver, uri)
-            
-            return cursor
+            // all items
+            else {
+
+                val cursor = db.itemDao().getAllItem()
+                cursor.setNotificationUri(it.contentResolver, uri)
+                return cursor
+            }
         }
 
         throw IllegalArgumentException("Failed to query row for uri $uri")
     }
 
     override fun getType(p0: Uri): String? {
-        return "vnd.android.cursor.item/$AUTHORITY.$TABLE_NAME"
+        return "$AUTHORITY.$TABLE_NAME"
     }
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
@@ -99,6 +113,9 @@ class MyContentProvider: ContentProvider() {
         throw IllegalArgumentException("Failed to update row into $uri")
     }
 
+    /**
+     * Custom Method
+     */
     override fun call(method: String, arg: String?, extras: Bundle?): Bundle? {
 
         val bundle = Bundle()

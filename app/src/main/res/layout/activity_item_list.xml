@@ -22,7 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="데이터 불러오기"
+        android:text="Refresh"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAppTitle" />
@@ -41,7 +42,8 @@
         <TextView
             android:id="@+id/tvData"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center" />
 
     </androidx.core.widget.NestedScrollView>
 
@@ -50,7 +52,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="테스트 데이터 추가"
+        android:text="Add"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnRemove"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -61,7 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:text="테스트 데이터 제거"
+        android:text="Remove All"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="@id/btnAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnAdd"
