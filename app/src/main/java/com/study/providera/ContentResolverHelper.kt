@@ -11,7 +11,7 @@ class ContentResolverHelper(private var mContext: Context) {
     companion object {
 
         const val TABLE_NAME = "item"
-        const val PROVIDER_NAME = "com.app.first.provider.MyContentProvider"
+        const val PROVIDER_NAME = "com.study.providera.MyContentProvider"
         const val URL = "content://$PROVIDER_NAME/$TABLE_NAME"
         val CONTENT_URI = Uri.parse(URL)
     }
